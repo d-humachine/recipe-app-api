@@ -3,6 +3,10 @@
 ```shell
 docker-compose build
 ```
+#### run migrate
+```shell
+docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate"  
+```
 
 #### run project:
 ```shell
@@ -34,3 +38,14 @@ docker-compose run --rm app sh -c "python manage.py startapp core"
 ```shell
 docker-compose run --rm app sh -c "python manage.py wait_for_db"
 ```
+
+#### create migrations
+```shell
+docker-compose run --rm app sh -c "python manage.py makemigrations"  
+```
+
+#### create superuser
+```shell
+docker-compose run --rm app sh -c "python manage.py createsuperuser"  
+```
+
